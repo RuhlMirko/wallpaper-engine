@@ -26,14 +26,25 @@ body {
   }
 }
 
+@keyframes expand {
+  from {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(1.2);
+  }
+}
+
 #test {
   padding: 20px;
+  margin: 60px;
   height: 200px;
   width: 200px;
   background-color: rgb(255, 200, 127);
+  transition: background-color 2s ease, transform 0.5s ease;
 }
 
 #test:hover {
   background-color: lightblue;
-  animation: fadeOut 2.5s ease-out forwards;
+  transform: scale(1.2);
 }

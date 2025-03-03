@@ -9,14 +9,16 @@ element.addEventListener("mouseout", function () {
 });
 
 document.addEventListener("mousemove", (event) => {
+  const animationTime = 2500;
   const trail = document.createElement("div");
   trail.classList.add("trail");
   document.body.appendChild(trail);
 
+  // Tracks the cursor coordinates
   trail.style.left = `${event.pageX}px`;
   trail.style.top = `${event.pageY}px`;
 
   setTimeout(() => {
     trail.remove();
-  }, 2500); // Removes the element after animation
+  }, animationTime); // Removes the element after animation ends
 });

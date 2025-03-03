@@ -1,0 +1,29 @@
+body {
+  margin: 0;
+  background-color: black;
+  overflow: hidden;
+}
+
+.firework {
+  position: absolute;
+  width: 5px;
+  height: 5px;
+  background-color: white;
+  border-radius: 50%;
+  pointer-events: none;
+  animation: explode 1.5s ease-out forwards;
+}
+
+@keyframes explode {
+  0% {
+    opacity: 1;
+    transform: translate(0, 0);
+  }
+  30% {
+    transform: translate(var(--x), var(--y));
+  }
+  100% {
+    opacity: 0;
+    transform: translate(calc(var(--x) * 1.2), calc(var(--y) * 1.2));
+  }
+}
