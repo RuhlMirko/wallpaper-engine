@@ -78,13 +78,14 @@ body {
   background-color: #1e2125;
   padding: 20px;
   border-radius: 10px;
+  margin-bottom: 20px;
 }
 
 .picker-container button {
   height: 50px;
-  background-color: #1e3149;
+  background-color: rgba(133, 59, 251);
   padding: 15px;
-  border-radius: inherit;
+  border-radius: 50px;
 }
 
 .picker-container input {
@@ -92,4 +93,21 @@ body {
   border: solid 1px #555;
   border-radius: inherit;
   padding: 5px;
+  text-align: center;
+}
+
+/*
+.hidden {
+  display: none;
+}
+*/
+.picker-preview {
+  display: flex;
+  gap: 10px;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 2rem;
+  margin-bottom: 50px;
 }
