@@ -2,6 +2,7 @@ const cards = document.querySelectorAll(".card");
 const wrapper = document.querySelector(".cards");
 const currentRgba = document.querySelector(".picker-container input").value;
 const userInput = document.querySelectorAll(".picker-preview input");
+let newRgba = currentRgba;
 
 /*
     This event listener follows the mouse cursor and adds the border styling 
@@ -14,7 +15,7 @@ wrapper.addEventListener("mousemove", function (event) {
     const y = event.clientY - rect.top;
 
     card.style.background = `radial-gradient(960px circle at ${x}px ${y}px,
-    rgba(133, 59, 251),
+    ${newRgba},
     transparent 15%)`;
   });
 });
@@ -35,7 +36,7 @@ values.forEach((val, index) => {
   }
 });
 
-userInput.forEach((item, index, fullarray) => {
+userInput.forEach((item) => {
   item.onchange = function () {
     switch (item.id) {
       case "userR":
@@ -52,7 +53,15 @@ userInput.forEach((item, index, fullarray) => {
         break;
     }
 
-    const newRgba = `rgba(${values.join(",")})`;
+    newRgba = `rgba(${values.join(",")})`;
     document.querySelector(".picker-container input").value = newRgba;
+
+    let result = values.slice(0, 3).every((currVal) => currVal > 170)
+      ? "#000"
+      : "#ddd";
+
+    document.querySelector(".picker-container button").style.color = result;
+    document.querySelector(".picker-container button").style.background =
+      newRgba;
   };
 });
