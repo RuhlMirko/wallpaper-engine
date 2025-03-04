@@ -106,8 +106,6 @@ body {
   gap: 10px;
   flex-direction: column;
   justify-content: center;
-  text-align: center;
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   font-size: 2rem;
   margin-bottom: 50px;
 }
