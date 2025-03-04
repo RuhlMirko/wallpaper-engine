@@ -2,6 +2,7 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+  color: #ddd;
 }
 
 body {
@@ -11,6 +12,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
 }
 
 .cards {
@@ -67,4 +69,27 @@ body {
 
 .card:hover::before {
   opacity: 1;
+}
+
+.picker-container {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  background-color: #1e2125;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.picker-container button {
+  height: 50px;
+  background-color: #1e3149;
+  padding: 15px;
+  border-radius: inherit;
+}
+
+.picker-container input {
+  background-color: inherit;
+  border: solid 1px #555;
+  border-radius: inherit;
+  padding: 5px;
 }
