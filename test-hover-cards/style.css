@@ -13,7 +13,7 @@ body {
   align-items: center;
 }
 
-.card-container {
+.cards {
   display: flex;
   flex-wrap: wrap;
   flex-direction: row;
@@ -46,25 +46,25 @@ body {
   border-radius: inherit;
   background: radial-gradient(
     960px circle at 0 0,
-    rgba(100, 0, 255, 0.1),
+    rgba(133, 59, 251, 0.1),
     transparent 40%
   );
   opacity: 0;
   transition: all 0.2s ease-in-out;
 }
 
-.card:hover {
-  transform: scale(0.9);
-}
-
-.card:hover::before {
-  opacity: 1;
-}
-
 .card-content {
-  background-color: #13161c;
+  background-color: #1e2125;
   border-radius: inherit;
   transition: all 0.25s;
   height: calc(100% - 2px);
   width: calc(100% - 2px);
+}
+
+.card:hover {
+  transform: scale(0.98);
+}
+
+.card:hover::before {
+  opacity: 1;
 }
