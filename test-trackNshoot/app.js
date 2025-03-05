@@ -14,3 +14,5 @@ document.addEventListener("mousemove", (e) => {
   box.style.transform = `rotate(${angle}deg)`;
   console.log(Math.floor(angle));
 });
+
+// TODO: make maurice reset its tracking after window resize
