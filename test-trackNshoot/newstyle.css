@@ -1,13 +1,21 @@
 body {
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
-  background-image: url(res/limbo-bg.png);
-  background-repeat: no-repeat;
-  background-size: cover;
+  background-color: black;
 }
 
-.box {
-  height: 170px;
-  margin: 220px 130px;
+.maurice {
+  position: absolute;
+  top: 30%;
+  left: 10%;
+  height: 220px;
+}
+
+.projectile {
+  position: absolute;
+  height: 100px;
+  top: 360px;
+  left: 270px;
+}
+
+.hidden {
+  display: none;
 }
