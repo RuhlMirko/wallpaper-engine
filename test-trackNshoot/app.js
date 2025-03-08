@@ -14,6 +14,16 @@ document.addEventListener("mousemove", (e) => {
     Math.atan2(e.pageX - boxCenter.x, -(e.pageY - boxCenter.y)) *
     (180 / Math.PI);
   maurice.style.transform = `rotate(${angle}deg)`;
+
+  const animationTime = 2500;
+
+  projectile.style.transform = `rotate(${angle - 90}deg)`;
+  let targetCoords = [`${e.pageX - 300}px`, `${e.pageY - 30}px`]; // Saves target coordinates
+
+  /*
+  setTimeout(() => {
+    projectile.remove();
+  }, animationTime);*/
 });
 
 // TODO: make maurice reset its tracking after window resize
