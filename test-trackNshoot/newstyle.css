@@ -11,7 +11,7 @@ body {
 
 .projectile {
   position: absolute;
-  height: 100px;
+  height: 70px;
   top: 360px;
   left: 170px;
 }

@@ -32,23 +32,38 @@ var bullet = {
   },
 };
 
+/*
 window.onload = function () {
   loop();
-};
+};*/
 
 window.onmousemove = function (e) {
   let angle =
     Math.atan2(e.pageX - boxCenter.x, -(e.pageY - boxCenter.y)) *
     (180 / Math.PI);
   maurice.style.transform = `rotate(${angle}deg)`;
-
-  projectile.style.transform = `rotate(${angle - 90}deg)`;
-  // Saves target coordinates (Dont know why it put minus 300 and minus 30)
-  //let targetCoords = [`${e.pageX - 300}px`, `${e.pageY - 30}px`];
 };
 
-window.onmousedown = function (e) {
+document.addEventListener("mousedown", newTick);
+
+function newTick(e) {
   logCons.innerHTML = `${e.pageY}, ${e.pageX} `;
-};
+  projectile.classList.remove("hidden");
+  projectile.style.top = `${e.pageY - 30}px`;
+  projectile.style.left = `${e.pageX - 250}px`;
 
-// TODO: make maurice reset its tracking after window resize
+  let angle =
+    Math.atan2(e.pageX - boxCenter.x, -(e.pageY - boxCenter.y)) *
+    (180 / Math.PI);
+  projectile.style.transform = `rotate(${angle - 90}deg)`;
+
+  setTimeout(newTick(), 200);
+}
+
+/* Quality of life features
+setTimeout(() => {
+    trail.remove();
+  }, animationTime);
+
+  TODO: make maurice reset its tracking after window resize
+*/
