@@ -10,14 +10,21 @@ const dayNames = [
   "Saturday",
   "Sunday",
 ];
+// const stages = {
+//   dawn: "linear-gradient(to top, rgba(240, 155, 65, 1) 0%, rgba(59, 162, 196, 1) 46%, rgba(55, 133, 189, 1) 76%)",
+//   afternoon:
+//     "linear-gradient(0deg,rgba(110, 180, 204, 1) 46%, #4ea7e6ff 76%)",
+//   sunset:
+//     "linear-gradient(0deg,rgba(170, 87, 102, 0.94) 3%, rgba(245, 192, 118, 1) 33%, rgba(247, 85, 85, 1) 100%)",
+//   night:
+//     "linear-gradient(0deg,rgba(10, 12, 17, 1) 0%, rgba(26, 26, 43, 1) 100%)",
+// };
+
 const stages = {
-  dawn: "linear-gradient(to top, rgba(240, 155, 65, 1) 0%, rgba(59, 162, 196, 1) 46%, rgba(55, 133, 189, 1) 76%)",
-  afternoon:
-    "linear-gradient(0deg,rgba(110, 180, 204, 1) 46%, rgba(78, 167, 230, 1) 76%)",
-  sunset:
-    "linear-gradient(0deg,rgba(170, 87, 102, 0.94) 3%, rgba(245, 192, 118, 1) 33%, rgba(247, 85, 85, 1) 100%)",
-  night:
-    "linear-gradient(0deg,rgba(10, 12, 17, 1) 0%, rgba(26, 26, 43, 1) 100%)",
+  dawn: "#8ac1dbff",
+  afternoon: "#4ea7e6",
+  sunset: "#73b3c7ff",
+  night: "#180e31",
 };
 
 const hourEl = document.getElementById("currHour");
@@ -41,7 +48,6 @@ setInterval(() => {
   const totalMinutes = 24 * 60; // 1440 minutes in a day
   const currentMinutes = parseInt(hours) * 60 + parseInt(minutes);
   dayProgress = ((currentMinutes / totalMinutes) * 100).toFixed(2);
-  console.log(dayProgress);
 
   const fullDate = `[ ${month}, ${date}, ${year}, "${dayNames[day]}" ],`;
   dayEl.textContent = fullDate;
