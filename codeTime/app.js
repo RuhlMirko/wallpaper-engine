@@ -8,7 +8,6 @@ const dayNames = [
   "Thursday",
   "Friday",
   "Saturday",
-  "Sunday",
 ];
 // const stages = {
 //   dawn: "linear-gradient(to top, rgba(240, 155, 65, 1) 0%, rgba(59, 162, 196, 1) 46%, rgba(55, 133, 189, 1) 76%)",
@@ -28,7 +27,8 @@ const stages = {
 };
 
 const hourEl = document.getElementById("currHour");
-const dayEl = document.getElementById("currDay");
+const dateEl = document.getElementById("currDay");
+const dayEl = document.getElementById("currDate");
 const background = document.getElementById("bg");
 let dayProgress = 0.0;
 
@@ -49,8 +49,19 @@ setInterval(() => {
   const currentMinutes = parseInt(hours) * 60 + parseInt(minutes);
   dayProgress = ((currentMinutes / totalMinutes) * 100).toFixed(2);
 
-  const fullDate = `[ ${month}, ${date}, ${year}, "${dayNames[day]}" ],`;
-  dayEl.textContent = fullDate;
+  const fullDate = `[ ${month}, ${date}, ${year} ],`;
+  dayEl.innerHTML =
+    "[ " +
+    dayNames
+      .map((x) => {
+        if (x == dayNames[day])
+          return `<span class="highlight">"${dayNames[day]}"</span>`;
+        return `"${x}"`;
+      })
+      .join(", ") +
+    " ]";
+
+  dateEl.textContent = fullDate;
   if (dayProgress > 80 || dayProgress <= 25)
     background.style.background = stages.night;
   else if (dayProgress >= 20 && dayProgress < 50)
